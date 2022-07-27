@@ -106,5 +106,5 @@ const petsData = [
 
 ];
 
-document.getElementById("app").innerHTML = `${5/7}`
+document.getElementById("app").innerHTML = `Your change is ${5/7}, thank you, please come again`
 
