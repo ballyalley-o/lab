@@ -98,6 +98,15 @@ const dogsData = `{
         "hypoallergenic": "No",
         "intelligence": 48,
         "photo": "https://media-be.chewy.com/wp-content/uploads/2021/04/16140537/Boxer_Feature-Image-1024x615.jpg"
+    }, {
+        "breed": "Askal",
+        "breedType": "Purebred",
+        "origin": "Philippines",
+        "popularity": "9",
+        "temperament": ["Playful", "Friendly", "Devoted", "Loyal"],
+        "hypoallergenic": "Yes",
+        "intelligence": 99,
+        "photo": "https://c8.alamy.com/zooms/9/04dd013db6c74997acc752ff5c34e402/k71eyp.jpg"
     }]
     
     
@@ -117,13 +126,13 @@ for(let i in dogs){
 
 function updateComparison(){
     let battle = document.getElementById("battle").value.toLowerCase();
-    let result = document.getElementById("result");
+    let result = document.getElementById("decision");
     let dog1 = document.getElementById("dog1Sel").value;
     let dog2 = document.getElementById("dog2Sel").value;
 
 
     if (dog1==dog2){
-        result.innerHTML = "These dogs are the same, man, select different breeds.";   
+        result.innerHTML = "These dogs are the same, man, select <emp>different</emp> breeds.";   
     }
     else {
         dog1 = breeds[dog1];
@@ -132,7 +141,7 @@ function updateComparison(){
         let data2 = dog2[battle];
 
         let decisionStr = `A ${dog1["breed"]}'s ${battle} is `;
-        let funnyStr = document.innerHTML = "your DOG is stupid, man.";
+        
 
         if (data1 > data2){
             decisionStr += "greater than ";
@@ -141,19 +150,21 @@ function updateComparison(){
             decisionStr += "the same as ";
         }
         else{
-            funnyStr;
+            decisionStr += "lower than ";
         }
         
         decisionStr += `a ${dog2["breed"]}'s.`;
 
         result.innerHTML = decisionStr;
+
+        
     }
     }
 function dogCage(breed, img, sortTitle, sortValue){
     return `
         <h2><strong> ${breed}</h2>
-        <img src="${img}" width="400rem" height="400rem">
-        <p>${sortTitle}; ${sortValue}</p>
+        <img src="${img}" width="400px" height="300px">
+        <p class="sortValAlign">${sortTitle}: ${sortValue}</p>
     `
 }
 
@@ -179,7 +190,6 @@ function sortAndShowAll(){
 
         const dogDiv = document.createElement("div");
         dogContainer.appendChild(dogDiv);
-        dogDiv.className = "con border border-5 rounded-5";
         dogDiv.innerHTML = dogCage(dog.breed, dog.photo, sort, dog[sort.toLowerCase()]);
     }
 }

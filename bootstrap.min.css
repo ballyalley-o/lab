@@ -33,6 +33,39 @@
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0))
 }
 
+
+.sortValAlign {
+    color:white;
+    text-align: center;
+    background-color: var(--bs-danger);
+
+}
+
+/* .btn-group button {
+    background-color: #04AA6D; /* Green background */
+    border: 1px solid green; /* Green border */
+    color: white; /* White text */
+    padding: 10px 24px; /* Some padding */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+  } */
+
+  .btn-group:after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .btn-group button:not(:last-child) {
+    border-right: none; /* Prevent double borders */
+  }
+  
+  /* Add a background color on hover */
+  .btn-group button:hover {
+    background-color: #3e8e41;
+  }
+
+
 *,
 ::after,
 ::before {
@@ -69,34 +102,45 @@ hr:not([size]) {
     height: 1px
 }
 
-.h1,
+.dogVs, {
+    margin-top: 0;
+    margin-bottom:;
+    font-size: 0px;
+    font-weight: 500 bolder;
+    line-height: 1.2;
+    text-align: center;
+
+}
+
 .h2,
 .h3,
 .h4,
 .h5,
 .h6,
-h1,
+
 h2,
 h3,
 h4,
 h5,
 h6 {
     margin-top: 0;
-    margin-bottom: .5rem;
+    margin-bottom:;
     font-weight: 500;
-    line-height: 1.2
+    line-height: 1.2;
+    text-align: center;
 }
 
-.h1,
-h1 {
-    font-size: calc(1.375rem + 1.5vw)
-}
+
+
 
 @media (min-width:1200px) {
 
     .h1,
     h1 {
-        font-size: 2.5rem
+        font-size: 4rem;
+        font-weight: bolder;
+        color: var(--bs-danger);
+        text-align: center;
     }
 }
 
@@ -303,6 +347,9 @@ figure {
 img,
 svg {
     vertical-align: middle
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    
 }
 
 table {
@@ -610,11 +657,11 @@ progress {
 
 .img-thumbnail {
     padding: .25rem;
-    background-color: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: .25rem;
+    
+    border-radius: .50rem;
     max-width: 100%;
     height: auto
+    
 }
 
 .figure {
@@ -628,7 +675,7 @@ progress {
 
 .figure-caption {
     font-size: .875em;
-    color: #6c757d
+    color:
 }
 
 .container,
@@ -639,10 +686,10 @@ progress {
 .container-xl,
 .container-xxl {
     width: 100%;
-    padding-right: var(--bs-gutter-x, .75rem);
-    padding-left: var(--bs-gutter-x, .75rem);
+    padding-right: 2px[];
+    padding-left: ;
     margin-right: auto;
-    margin-left: auto
+    margin-left: auto;
 }
 
 @media (min-width:576px) {
@@ -700,9 +747,9 @@ progress {
     --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(var(--bs-gutter-y) * -1);
-    margin-right: calc(var(--bs-gutter-x) * -.5);
-    margin-left: calc(var(--bs-gutter-x) * -.5)
+    margin-top: calc(-1 * var(--bs-gutter-y) * -1);
+    margin-right: calc(-.5 * var(--bs-gutter-x) * -.5);
+    margin-left: calc(-.5 * var(--bs-gutter-x) * -.5)
 }
 
 .row>* {
@@ -712,15 +759,19 @@ progress {
     padding-right: calc(var(--bs-gutter-x) * .5);
     padding-left: calc(var(--bs-gutter-x) * .5);
     margin-top: var(--bs-gutter-y)
+    
 }
 
 .col {
     flex: 1 0 0%
+    
 }
 
 .row-cols-auto>* {
     flex: 0 0 auto;
-    width: auto
+    width: auto;
+   
+    
 }
 
 .row-cols-1>* {
@@ -4339,7 +4390,7 @@ fieldset:disabled .btn {
 .btn-group-vertical {
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center
+    justify-content: auto
 }
 
 .btn-group-vertical>.btn,

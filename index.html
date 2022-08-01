@@ -2,53 +2,51 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dog Comparison</title>
+    <title>Dog Versus</title>
     <link href="bootstrap.min.css" 
           rel="stylesheet"
           crossorigin="anonymous">
-
-    <h1 class="dogvs">DOG versus</h1>
+          
+    <h1 class="dogVs">DOG versus</h1>
 </head>
 
-
 <body class="container">
-
-
-    <div class="row justify-content-auto m-5">
+    
+ <div class="row justify-content-auto">
         <div id="dog1" class="col">
             <select id="dog1Sel">
             </select>
         </div> 
-    </div>
-
+    
     <div class="col">
-        <label for="battle">Battle by:</label>
+        <label for="battle">Battle: </label>
         <select id="battle">
             <option>Intelligence</option>
             <option>Popularity</option>
         </select>
     </div>
-    <button class="row btn btn-danger m-3"
-            onclick="updateComparison()"><strong>VERSUS</strong>
-    </button>
 
-    <div><p id="result">Decision</p>,</div>
+     <div id="dog2" class="col">
+        <select id="dog2Sel">
+        </select>
+    </div>
+   
+    <button class="row btn btn-danger m-2" onclick="updateComparison()"><strong>VERSUS</strong>
+    </button>
+    <div><p id="decision">waiting for decision</p></div>
+
+</div>
 
     <label for="sortVar">Sort by:</label>
     <select id="sortVar" 
             onChange="sortAndShowAll()">
+            <option>Intelligence</option>
+            <option>Popularity</option>
     </select>
     <div id="showAllContainer"
          class="row row-cols-auto justify-content-center">
     </div>
-
-    <div id="dog2" class="col">
-        <select id="dog2Sel">
-        </select>
-    </div>
-
     
 
     <script src="scripts.js"></script>
